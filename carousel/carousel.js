@@ -6,6 +6,7 @@ function carousel (){
                     leftI = $('.left-icon'),
                     rightI = $('.right-icon'),
                     autoRotateInterval = 5000,
+                    width = elements.find('div').width(),
                     currentPos = 1;
 
                 function startCarousel(){
@@ -25,7 +26,6 @@ function carousel (){
 
                 function bindEvents(){
                     leftI.click(function(){
-                        alert('left');
                         loadPrevPage();
                     });
 
@@ -35,19 +35,35 @@ function carousel (){
                 }
 
                 function loadPrevPage(){
+                    slideToRight();
                     if( currentPos  == 1)
                         currentPos = size;
                     else
                         currentPos --;
-                    startNav();
                 }
 
                 function loadNextPage(){
+                    slideToLeft();
                     if(currentPos == size)
                         currentPos = 1;
                     else
                         currentPos ++;
-                    startNav();
+                }
+
+                function slideToLeft(){
+
+                    elements.find('div[id$=' + currentPos +']').animate({left:"-="+width}, function(){
+                        startNav();
+                        $(this).css('left', 0);
+                    });
+                }
+
+                function slideToRight(){
+
+                    elements.find('div[id$=' + currentPos +']').animate({left:"+="+width}, function(){
+                        startNav();
+                        $(this).css('left', 0);
+                    });
                 }
 
                 function startNav(){
