@@ -59,9 +59,7 @@ function carousel (){
 
                 }
 
-                $(window).load(function(){
                    startCarousel();
-                });
 };
 
 
