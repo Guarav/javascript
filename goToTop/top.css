@@ -1,0 +1,14 @@
+.fixed-top-icon{
+	position: fixed ;
+                display: none;
+                right:2%;
+                bottom:10%;
+                width: 54px;
+                height: 27px;
+                text-align: center;
+                border-radius: 5px 5px 5px 5px;
+                background: rgba(0,0,0,0.7);
+                cursor:pointer;
+                padding-top: 10px;	
+
+            }
